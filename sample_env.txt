@@ -1,0 +1,29 @@
+#API Details
+API_URL = "https://smart-staging-2.nhsdatacollection.org"
+#INSERT API_KEY
+API_KEY = ""
+
+#Program Parameters
+#Either a date in the format YYYY-MM-DD or "today" to use current date
+DATE_END = "today"
+#Accepts days, weeks, months, years. By default use 2 weeks.
+DATE_WINDOW = "2 weeks"
+
+
+#Backend settings (DO NOT ADJUST)
+WAIT_PERIOD = 5
+WAIT_COOLOFF = 60
+
+SITES = ["S0189179","S89CFECF","S818235B","SF06F50A","S48446E1","S12C3F7C"]
+#"S0189179" #Barnet Hospital
+#"S89CFECF" #Chase Farm Hospital
+#"S818235B" #North Middlesex Hospital
+#"SF06F50A" #Royal Free Hospital
+#"S48446E1" #UCLH
+#"S12C3F7C"	#Whittington Hospital
+
+#INSERT SQL ADDRESS
+SQL_ADDRESS = ""
+SQL_DATABASE = "Data_Lab_NCL"
+SQL_SCHEMA = "dbo"
+SQL_TABLE = "smart_api_data"
