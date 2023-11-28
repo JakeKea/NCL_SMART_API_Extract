@@ -115,7 +115,7 @@ def calculate_runs(date_start, date_end):
 #Make a request to the API
 def smart_request (url, key, date_start, date_end, hash_id):
     #Set request URL
-    req_url = f"{url}/api/sitrep/site/{hash_id}/"
+    req_url = f"{url}api/sitrep/site/{hash_id}/"
 
     #Set request parameters
     params = {
@@ -235,7 +235,7 @@ def execute_runs(runs, env):
                     res = smart_request(url, key, date_start, date_end, site)
                 except:
                     raise Exception("Failed twice so cancelling execution.")
-            print(f"Request fulfilled for site {site} from {date_start} to {date_end}")
+            #print(f"Request fulfilled for site {site} from {date_start} to {date_end}")
 
             #Upload and manage datasets
             upload_request_data(res, date_start, date_end, site, env)
@@ -255,41 +255,4 @@ def main():
     #Execute the runs on the API and upload the result to the sandpit
     execute_runs(runs, env)
 
-#Test functions
-def test_runs():
-    env = import_settings()
-    date_end = process_date_end(env["DATE_END"])
-    date_start = process_date_window(env["DATE_WINDOW"], date_end)
-
-    runs = calculate_runs(date_start, date_end)
-
-    execute_runs(runs, env)
-
-def test_request():
-    #Import settings from the .env file
-    env = import_settings()
-    date_end = process_date_end(env["DATE_END"])
-    date_start = datetime.strftime(process_date_window(env["DATE_WINDOW"], date_end), "%Y-%m-%d")
-
-    date_end = datetime.strftime(date_end, "%Y-%m-%d")
-    hash_id = "S0189179"
-
-    url = env["API_URL"]
-    key = env["API_KEY"]
-
-    print(date_end)
-    print(date_start)
-
-    df = smart_request(url, key, date_start, date_end, hash_id)
-
-    print(df)
-
-def test_delete():
-    env = import_settings()
-    date_end = process_date_end(env["DATE_END"])
-    date_start = process_date_window(env["DATE_WINDOW"], date_end)
-
-    print(get_delete_query(date_start, date_end, "TESTSITE", env))
-
 main()
-#test_delete()
