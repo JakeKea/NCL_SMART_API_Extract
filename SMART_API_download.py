@@ -8,7 +8,8 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
 #Library from https://github.com/ncl-icb-analytics/sqlsnippets
-import ncl.sqlsnippets as snips
+#pip install ncl-sqlsnippets
+import ncl_sqlsnippets as snips
 
 #Process settings
 def import_settings():
@@ -255,4 +256,5 @@ def main():
     #Execute the runs on the API and upload the result to the sandpit
     execute_runs(runs, env)
 
+print("Program starting...")
 main()
