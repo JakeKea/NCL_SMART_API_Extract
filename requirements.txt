@@ -1,5 +1,5 @@
 arcgis==2.2.0.1
-pandas==1.5.2
+pandas==2.1.4
 python-dotenv==1.0.0
 python_dateutil==2.8.2
 Requests==2.31.0
