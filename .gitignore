@@ -1,17 +1,3 @@
-# Exclude default R data formats and R studio files that may accidentally save your data.
-.Rproj.user
-.Rhistory
-.Rdata
-.httr-oauth
-.DS_Store
-.quarto
-
-# Exclude the following directories 
-/output/*
-/docs/archive/historic/
-/data/procedures/*/BADS
-/archive/
-
 # Exclude data file types
 *.doc
 *.docx
@@ -24,5 +10,3 @@
 *.msg
 
 .env
-
-SMART_API_test.py
