@@ -21,6 +21,7 @@
 *.xlsb
 *.csv
 *.pdf
+*.msg
 
 .env
 
