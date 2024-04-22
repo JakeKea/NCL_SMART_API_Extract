@@ -2,6 +2,7 @@ import json
 import pandas as pd
 import requests
 import time
+import os
 from os import getenv
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
@@ -32,6 +33,12 @@ def import_settings():
         "SQL_SCHEMA": getenv("SQL_SCHEMA"),
         "SQL_TABLE": getenv("SQL_TABLE")
     }
+
+#Sets the directory to the location of this file
+def set_cwd():
+    #Change working directory to current
+    script_dir = os.path.dirname(__file__)
+    os.chdir(script_dir)
 
 #Takes the input DATE_END and returns it as a date type variable
 def process_date_end(input_date_end):
@@ -243,6 +250,10 @@ def execute_runs(runs, env):
 
 #Main function
 def main():
+    
+    #Set file location as cwd
+    set_cwd()
+
     #Import settings from the .env file
     env = import_settings()
 
