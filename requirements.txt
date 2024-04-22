@@ -1,5 +1,5 @@
-pandas
-python-dotenv==1.0.0
-python_dateutil==2.8.2
+pandas==2.2.2
+python-dotenv==1.0.1
+python_dateutil==2.9.0
 Requests==2.31.0
-pyodbc
+pyodbc==5.1.0
